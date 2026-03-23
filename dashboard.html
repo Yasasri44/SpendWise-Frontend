@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SpendWise Dashboard</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cal-heatmap@4.2.4/dist/cal-heatmap.css">
+<script src="https://cdn.jsdelivr.net/npm/cal-heatmap@4.2.4/dist/cal-heatmap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+<h2>💳 SpendWise</h2>
+
+<ul>
+<li class="active" onclick="showSection('dashboard')">Dashboard</li>
+<li onclick="showSection('expenses')">Expenses</li>
+<li onclick="showSection('reports')">Reports</li>
+</ul>
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="section active">
+
+<h1>Dashboard Overview</h1>
+
+<div class="cards">
+<div class="card"><h3>Total</h3><p id="totalSpent">₹0</p></div>
+<div class="card"><h3>Max Day</h3><p id="maxDay">-</p></div>
+<div class="card"><h3>Min Day</h3><p id="minDay">-</p></div>
+</div>
+
+<div class="charts">
+<div class="chart-card"><canvas id="categoryChart"></canvas></div>
+<div class="chart-card"><canvas id="dailyChart"></canvas></div>
+</div>
+
+</div>
+
+<!-- EXPENSES -->
+<div id="expenses" class="section">
+
+<h1>Add Expense</h1>
+
+<div class="add-box">
+<input id="amount" placeholder="Amount">
+<input id="category" placeholder="Category">
+<input id="description" placeholder="Description">
+<input id="date" type="date">
+<button onclick="addExpense()">+ Add</button>
+</div>
+
+<h2>Recent Expenses</h2>
+
+<table>
+<thead>
+<tr>
+<th>Amount</th>
+<th>Category</th>
+<th>Description</th>
+<th>Date</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="expenseTable"></tbody>
+
+</table>
+
+</div>
+
+<!-- REPORTS -->
+<div id="reports" class="section">
+
+<h1>Spending Heatmap</h1>
+<div id="spendHeatmap"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>
