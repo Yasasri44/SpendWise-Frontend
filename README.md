@@ -49,7 +49,7 @@ http://localhost:8080/expenses
 ### 📊 Dashboard
 ![Dashboard](images/dashboard.png)
 
-### 🔥 Heatmap
+### 🔥 Expenses
 ![expenses](images/expenses.png)
 
 
